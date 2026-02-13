@@ -31,10 +31,10 @@ ConnectGo resolves these issues through an intuitive mobile app that matches sol
 ### Technologies/Components Used
 
 **For Software:**
-- Languages used: [e.g., JavaScript, Python, Java]
+- Languages used: Python, HTML, CSS, MySQL
 - Frameworks used: [e.g., React, Django, Spring Boot]
 - Libraries used: [e.g., axios, pandas, JUnit]
-- Tools used: [e.g., VS Code, Git, Docker]
+- Tools used: VS Code, Git
 
 **For Hardware:**
 - Main components: [List main components]
