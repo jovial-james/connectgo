@@ -1,10 +1,9 @@
-from fastapi import FastAPI, Form
-from fastapi.responses import HTMLResponse
+from fastapi import FastAPI, Form, responses
+
 import mysql.connector
 import bcrypt
 
 app = FastAPI()
-
 
 def get_db_connection():
     return mysql.connector.connect(
@@ -14,7 +13,7 @@ def get_db_connection():
         database="ConnectGo"
     )
 
-@app.get("/", response_class=HTMLResponse)
+@app.get("/", response_class=responses.HTMLResponse)
 async def signup_page():
     # This serves a simple HTML form to the user
     return """
@@ -33,14 +32,13 @@ async def signup_page():
 
 @app.post("/register")
 async def register(username: str = Form(...), email: str = Form(...), password: str = Form(...)):
-    # 1. Hash the password
+    
     hashed = bcrypt.hashpw(password.encode('utf-8'), bcrypt.gensalt())
     
-    # 2. Use your mysql-connector logic
     conn = get_db_connection()
-    cursor = conn.cursor()
+    cursor = conn.cursor(dictionary=True)
     try:
-        cursor.execute("INSERT INTO users (username, email, password_hash) VALUES (%s, %s, %s)", 
+        cursor.execute("INSERT INTO users (username, email, password) VALUES (%s, %s, %s)", 
                        (username, email, hashed))
         conn.commit()
         return {"message": "Success! User added to MySQL."}
@@ -49,3 +47,31 @@ async def register(username: str = Form(...), email: str = Form(...), password: 
     finally:
         cursor.close()
         conn.close()
+        
+
+@app.post("/login-validation")
+async def login(user_email: str = Form(...), user_password: str = Form(...)):
+    
+    conn = get_db_connection()
+    cursor = conn.cursor()
+
+    cursor.execute("SELECT password, is_active FROM users WHERE email = %s", (user_email,))
+    user = cursor.fetchone()
+    conn.close()
+
+    if not user:
+        return responses.RedirectResponse(url="/signup", status_code=303)
+
+    #active or not
+    if user['is_active'] == 0:
+        return "Account is deactivated."
+
+    #password check
+    if bcrypt.checkpw(user_password.encode('utf-8'), user['password'].encode('utf-8')):
+        
+        #Redirect to the Dashboard
+        return responses.RedirectResponse(url="/dashboard", status_code=302)
+    
+    else:
+        # INVALID
+        return "Incorrect password!"

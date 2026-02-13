@@ -14,7 +14,7 @@ try:
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     is_active TINYINT(1) DEFAULT 1
     )""")
+    conn.commit()
 except mysql.connector.Error as e:
-    cursor.close()
-finally:
-    conn.close()
+    print(f"Error connecting to MySQL: {e}")
+
