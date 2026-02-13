@@ -31,7 +31,7 @@ body, h1, h2, h3, p, ul {
 /* Landing Page */
 .landing-container {
   height: 100vh;
-  background-image: url('travel.jpeg');
+  background-image: url('travel1.jpg');
   background-size: cover;
   background-position: center;
   display: flex;
