@@ -2,27 +2,27 @@
   <img src="./img.png" alt="Project Banner" width="100%">
 </p>
 
-# [Project Name] 🎯
+# ConnectGo 🎯
 
 ## Basic Details
 
-### Team Name: [Name]
+### Team Name: LADY LOGICS
 
 ### Team Members
-- Member 1: [Name] - [College]
-- Member 2: [Name] - [College]
+- Member 1: ABHIRAMI S - Government Engineering College Thrissur
+- Member 2: JOVIAL JAMES - Government Engineering College Thrissur
 
 ### Hosted Project Link
 [mention your project hosted link here]
 
 ### Project Description
-[2-3 lines about what your project does]
+ConnectGo is a mobile app connecting travelers with shared interests to split accommodations and expenses seamlessly. Users match by destination, dates, and preferences, chat securely, and plan trips together for cost savings and safer adventures.
 
 ### The Problem statement
-[What problem are you solving?]
+Travelers often face high accommodation and travel costs, lack of companionship, and safety concerns when exploring new destinations. Finding compatible travel partners with matching itineraries, budgets, and interests remains challenging without reliable platforms. This results in expensive solo trips, missed opportunities for shared experiences, and reduced travel frequency.
 
 ### The Solution
-[How are you solving it?]
+ConnectGo resolves these issues through an intuitive mobile app that matches solo travelers based on destination, travel dates, budget, interests, and preferences using smart algorithms. Users connect via verified profiles and secure in-app chat to co-book accommodations and split expenses effortlessly. Additional safety features like real-time itinerary sharing, emergency contacts, and user ratings ensure trustworthy partnerships, enabling affordable, enjoyable, and secure group travel.
 
 ---
 
