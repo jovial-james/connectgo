@@ -1,6 +1,9 @@
 from fastapi import FastAPI, Form, responses
 import mysql.connector
 import bcrypt
+from fastapi import Request
+from fastapi.templating import Jinja2Templates
+from fastapi.staticfiles import StaticFiles
 
 app = FastAPI()
 
@@ -15,7 +18,7 @@ def get_db_connection():
 
 @app.post("/register")
 async def register(username: str = Form(...), email: str = Form(...), password: str = Form(...)):
-    hashed = bcrypt.hashpw(password.encode('utf-8'), bcrypt.gensalt())
+    hashed = bcrypt.hashpw(password.encode('utf-8'), bcrypt.gensalt()).decode('utf-8')
     conn = get_db_connection()
     cursor = conn.cursor()
     try:
@@ -38,6 +41,7 @@ async def login(user_email: str = Form(...), user_password: str = Form(...)):
 
     cursor.execute("SELECT password, is_active FROM users WHERE email = %s", (user_email,))
     user = cursor.fetchone()
+    cursor.close()
     conn.close()
 
     if not user:
@@ -48,11 +52,31 @@ async def login(user_email: str = Form(...), user_password: str = Form(...)):
         return "Account is deactivated."
 
     # FIX 3: Ensure the stored password is treated as bytes for bcrypt
-    stored_password = user['password']
-    if isinstance(stored_password, str):
-        stored_password = stored_password.encode('utf-8')
-
+    stored_password = user['password'].encode('utf-8')
+    
     if bcrypt.checkpw(user_password.encode('utf-8'), stored_password):
         return responses.RedirectResponse(url="/dashboard", status_code=302)
     else:
         return "Incorrect password!"
+    
+
+
+# 1. Setup templates and static files (CSS/Images)
+templates = Jinja2Templates(directory=".") # If files are in the same folder
+app.mount("/static", StaticFiles(directory="."), name="static") 
+
+@app.get("/", response_class=responses.HTMLResponse)
+async def index(request: Request):
+    return templates.TemplateResponse("index.html", {"request": request})
+
+@app.get("/login", response_class=responses.HTMLResponse)
+async def login_page(request: Request):
+    return templates.TemplateResponse("login.html", {"request": request})
+
+@app.get("/create-account", response_class=responses.HTMLResponse)
+async def signup_page(request: Request):
+    return templates.TemplateResponse("create-account.html", {"request": request})
+
+@app.get("/dashboard", response_class=responses.HTMLResponse)
+async def dashboard(request: Request):
+    return templates.TemplateResponse("dashboard.html", {"request": request})
