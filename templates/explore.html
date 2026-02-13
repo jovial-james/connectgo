@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Explore Trips - ConnectGo</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Navigation Bar -->
+  <nav class="navbar">
+    <div class="nav-left">
+      <a href="index.html" class="nav-item">Home</a>
+      <a href="dashboard.html" class="nav-item">Dashboard</a>
+      <a href="explore.html" class="nav-item active">Explore</a>
+      <a href="chat.html" class="nav-item">Chats</a>
+    </div>
+    <div class="nav-right">
+      <a href="index.html" class="nav-item logout">Logout</a>
+    </div>
+  </nav>
+
+  <main class="explore-main">
+    <!-- Search Filters -->
+    <section class="search-section">
+      <h2>Find Your Trip</h2>
+      <form id="searchForm">
+        <input type="text" placeholder="Destination" name="destination" required>
+
+        <select name="budget">
+          <option value="">Select Budget</option>
+          <option value="low">Low</option>
+          <option value="medium">Medium</option>
+          <option value="high">High</option>
+        </select>
+
+        <select name="travelType" id="travelType">
+          <option value="">Travel Type</option>
+          <option value="individual">Individual</option>
+          <option value="family">Family</option>
+        </select>
+
+        <select name="companion" id="companion">
+          <option value="">Companion</option>
+          <option value="male">Male</option>
+          <option value="female">Female</option>
+        </select>
+
+        <button type="submit" class="btn">Search</button>
+      </form>
+    </section>
+
+    <!-- Search Results -->
+    <section class="results-section">
+      <h2>Available Trips</h2>
+      <div class="trip-cards">
+        <div class="trip-card">
+          <h3>Beach Adventure in Bali</h3>
+          <p>Budget: Medium | Type: Individual | Companion: Female</p>
+        </div>
+        <div class="trip-card">
+          <h3>Mountain Trek Himalayas</h3>
+          <p>Budget: High | Type: Family | Companion: N/A</p>
+        </div>
+        <div class="trip-card">
+          <h3>City Tour Paris</h3>
+          <p>Budget: Medium | Type: Individual | Companion: Male</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script>
+    // Show/hide companion filter based on travel type
+    const travelType = document.getElementById('travelType');
+    const companion = document.getElementById('companion');
+
+    travelType.addEventListener('change', () => {
+      if(travelType.value === 'individual') {
+        companion.style.display = 'inline-block';
+      } else {
+        companion.style.display = 'none';
+        companion.value = '';
+      }
+    });
+
+    // Simple static search functionality (for demo)
+    const form = document.getElementById('searchForm');
+    form.addEventListener('submit', e => {
+      e.preventDefault();
+      alert('Search submitted! In a real app, results will appear below based on filters.');
+    });
+
+    companion.style.display = 'none'; // hide initially
+  </script>
+</body>
+</html>

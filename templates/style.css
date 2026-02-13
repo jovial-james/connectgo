@@ -1,0 +1,263 @@
+/* General reset */
+body, h1, h2, h3, p, ul {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Arial', sans-serif;
+}
+
+/* Buttons */
+.btn {
+  display: inline-block;
+  padding: 12px 30px;
+  margin: 10px;
+  background-color: #118ab2;
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 8px;
+  transition: 0.3s;
+}
+.btn:hover {
+  background-color: #073b4c;
+}
+.btn-secondary {
+  background-color: #06d6a0;
+}
+.btn-secondary:hover {
+  background-color: #028060;
+}
+
+/* Landing Page */
+.landing-container {
+  height: 100vh;
+  background-image: url('travel.jpeg');
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: white;
+  padding: 20px;
+}
+.landing-container h1 {
+  font-size: 70px;
+  color: #ffd166;
+  margin-bottom: 20px;
+}
+.landing-container p {
+  font-size: 24px;
+  color: #06d6a0;
+  margin-bottom: 40px;
+}
+
+/* Forms */
+.form-container {
+  max-width: 400px;
+  margin: 80px auto;
+  padding: 30px;
+  background-color: #f0f0f0;
+  border-radius: 15px;
+  text-align: center;
+}
+.form-container input {
+  width: 90%;
+  padding: 12px;
+  margin: 10px 0;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+}
+.form-container button {
+  width: 95%;
+}
+
+/* Navbar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #118ab2;
+  padding: 15px 30px;
+  color: white;
+}
+.navbar .nav-item {
+  margin-right: 20px;
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  transition: 0.3s;
+}
+.navbar .nav-item:hover {
+  color: #ffd166;
+}
+.navbar .active {
+  color: #ffd166;
+  text-decoration: underline;
+}
+.navbar .nav-right .logout {
+  margin-left: auto;
+}
+
+/* Dashboard Layout */
+.dashboard-main {
+  display: flex;
+  justify-content: space-between;
+  padding: 40px;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+.planned-trip {
+  flex: 2;
+}
+.trip-card.large {
+  background-color: #ffd166;
+  padding: 25px;
+  border-radius: 12px;
+  margin-bottom: 20px;
+}
+.saved-trips {
+  flex: 1;
+  background-color: #06d6a0;
+  padding: 20px;
+  border-radius: 12px;
+  color: white;
+  min-width: 220px;
+}
+.saved-trips ul {
+  list-style: none;
+  margin-top: 10px;
+}
+.saved-trips li {
+  margin-bottom: 10px;
+}
+.saved-trips .chat-button {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 10px 20px;
+  background-color: #118ab2;
+  color: white;
+  text-decoration: none;
+  border-radius: 8px;
+  font-weight: bold;
+}
+.saved-trips .chat-button:hover {
+  background-color: #073b4c;
+}
+
+/* Explore & Chat Pages */
+.content-main {
+  padding: 50px;
+  text-align: center;
+}
+/* Login Page */
+.login-container {
+  height: 100vh;
+  background-image: url('travel.jpeg');
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.login-box {
+  background-color: rgba(0, 0, 0, 0.6); /* semi-transparent overlay */
+  padding: 40px;
+  border-radius: 15px;
+  text-align: center;
+  color: white;
+  width: 300px;
+}
+
+.login-box h1 {
+  color: #ffd166;
+  margin-bottom: 20px;
+  font-size: 32px;
+}
+
+.login-box input {
+  width: 90%;
+  padding: 12px;
+  margin: 10px 0;
+  border-radius: 6px;
+  border: none;
+}
+
+.login-box button {
+  width: 95%;
+  margin-top: 15px;
+}
+
+.login-box p {
+  margin-top: 15px;
+  font-size: 14px;
+}
+
+.login-box .link {
+  color: #06d6a0;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.login-box .link:hover {
+  text-decoration: underline;
+}
+.explore-main {
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.search-section {
+  background-color: #ffd166;
+  padding: 20px;
+  border-radius: 12px;
+}
+
+.search-section form {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  align-items: center;
+}
+
+.search-section input,
+.search-section select {
+  padding: 10px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+}
+
+.search-section button {
+  padding: 12px 25px;
+  background-color: #118ab2;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+}
+.search-section button:hover {
+  background-color: #073b4c;
+}
+
+.results-section h2 {
+  margin-bottom: 20px;
+}
+
+.trip-cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.trip-card {
+  background-color: #06d6a0;
+  color: white;
+  padding: 20px;
+  border-radius: 12px;
+  flex: 1 1 250px;
+}

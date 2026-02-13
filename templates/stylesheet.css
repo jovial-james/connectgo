@@ -1,0 +1,125 @@
+/* --- Global Variables & Reset --- */
+:root {
+  --primary-orange: #ff7e5f;
+  --adventure-blue: #00b4d8;
+  --deep-navy: #03045e;
+  --soft-white: #f8f9fa;
+  --text-dark: #2d3436;
+  --card-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  --transition: all 0.3s ease;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Inter', sans-serif;
+}
+
+body {
+  background-color: var(--soft-white);
+  color: var(--text-dark);
+  line-height: 1.6;
+}
+
+/* --- Hero Section --- */
+.img {
+  height: 80vh;
+  background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), 
+              url('travel.jpeg') center/cover no-repeat;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: white;
+  padding: 20px;
+}
+
+.img h1 {
+  font-size: 3.5rem;
+  margin-bottom: 1rem;
+  font-weight: 800;
+}
+
+/* --- Search Bar --- */
+.search-container {
+  background: white;
+  padding: 10px;
+  border-radius: 50px;
+  display: flex;
+  width: 90%;
+  max-width: 800px;
+  box-shadow: var(--card-shadow);
+}
+
+.search-input {
+  flex: 1;
+  border: none;
+  padding: 15px 25px;
+  outline: none;
+  font-size: 1rem;
+}
+
+.search-btn {
+  background: var(--primary-orange);
+  color: white;
+  border: none;
+  padding: 15px 35px;
+  border-radius: 50px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: var(--transition);
+}
+
+.search-btn:hover {
+  background: #e66a4e;
+  transform: translateY(-2px);
+}
+
+/* --- Trip Cards Grid --- */
+.trips-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 25px;
+  padding: 50px 10%;
+}
+
+.card {
+  background: white;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: var(--card-shadow);
+  transition: var(--transition);
+  cursor: pointer;
+}
+
+.card:hover {
+  transform: translateY(-10px);
+}
+
+.card-image {
+  height: 200px;
+  width: 100%;
+  object-fit: cover;
+}
+
+.card-content {
+  padding: 20px;
+}
+
+.badge {
+  background: var(--adventure-blue);
+  color: white;
+  padding: 5px 12px;
+  border-radius: 15px;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+}
+
+/* --- Responsive Design --- */
+@media (max-width: 768px) {
+  .img h1 { font-size: 2.2rem; }
+  .search-container { flex-direction: column; border-radius: 20px; }
+  .search-btn { border-radius: 15px; margin-top: 10px; }
+}
