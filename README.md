@@ -33,7 +33,7 @@ ConnectGo resolves these issues through an intuitive mobile app that matches sol
 **For Software:**
 - Languages used: Python, HTML, CSS, MySQL
 - Frameworks used: [e.g., React, Django, Spring Boot]
-- Libraries used: [e.g., axios, pandas, JUnit]
+- Libraries used: fastapi, jinja2, uvicorn, mysql-connector, bcrypt
 - Tools used: VS Code, Git
 
 **For Hardware:**
@@ -46,10 +46,10 @@ ConnectGo resolves these issues through an intuitive mobile app that matches sol
 ## Features
 
 List the key features of your project:
-- Feature 1: [Description]
-- Feature 2: [Description]
-- Feature 3: [Description]
-- Feature 4: [Description]
+- Feature 1: Smart matching by destination, dates, budget, and preferences
+- Feature 2: Secure in-app chat and itinerary planning tools.
+- Feature 3: Add your own travel plans and find interested individuals or groups
+- Feature 4: Add blogs of places a user visited
 
 ---
 
@@ -59,12 +59,17 @@ List the key features of your project:
 
 #### Installation
 ```bash
-[Installation commands - e.g., npm install, pip install -r requirements.txt]
+pip install mysql-connector-python
+pip install uvicorn
+pip install bcrypt
+pip install fastapi
+pip install jinja2
 ```
 
 #### Run
 ```bash
-[Run commands - e.g., npm start, python app.py]
+python db.py
+python main.py
 ```
 
 ### For Hardware:
@@ -83,8 +88,8 @@ List the key features of your project:
 
 #### Screenshots (Add at least 3)
 
-![Screenshot1](Add screenshot 1 here with proper name)
-*Add caption explaining what this shows*
+<img width="1920" height="914" alt="image" src="https://github.com/user-attachments/assets/a68a41a0-479c-4553-8aed-d430af062e74" />
+the image shows the home page of website.login button will direct the user to login page and create account button will direct the user to account creation page.
 
 ![Screenshot2](Add screenshot 2 here with proper name)
 *Add caption explaining what this shows*
