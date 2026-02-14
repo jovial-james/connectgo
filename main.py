@@ -27,14 +27,24 @@ async def login_page(request: Request):
     return templates.TemplateResponse("login.html", {"request": request})
 
 
-@app.get("/create-account", response_class=responses.HTMLResponse)
+@app.get("/createaccount", response_class=responses.HTMLResponse)
 async def signup_page(request: Request):
-    return templates.TemplateResponse("create-account.html", {"request": request})
+    return templates.TemplateResponse("createaccount.html", {"request": request})
 
 
 @app.get("/dashboard", response_class=responses.HTMLResponse)
 async def dashboard(request: Request):
     return templates.TemplateResponse("dashboard.html", {"request": request})
+
+
+@app.get("/explore", response_class=responses.HTMLResponse)
+async def explore(request: Request):
+    return templates.TemplateResponse("explore.html", {"request": request})
+
+
+@app.get("/chat", response_class=responses.HTMLResponse)
+async def chat(request: Request):
+    return templates.TemplateResponse("chat.html", {"request": request})
 
 
 @app.post("/register")
