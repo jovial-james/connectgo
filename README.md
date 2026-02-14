@@ -91,11 +91,19 @@ python main.py
 <img width="1920" height="914" alt="image" src="https://github.com/user-attachments/assets/a68a41a0-479c-4553-8aed-d430af062e74" />
 the image shows the home page of website.login button will direct the user to login page and create account button will direct the user to account creation page.
 
-![Screenshot2](Add screenshot 2 here with proper name)
-*Add caption explaining what this shows*
+<img width="1593" height="744" alt="image" src="https://github.com/user-attachments/assets/0f17dd18-9e34-41a3-87d3-07ae61a35ecf" />
+create account:creates new user using username,email id,password
 
-![Screenshot3](Add screenshot 3 here with proper name)
-*Add caption explaining what this shows*
+<img width="1593" height="744" alt="image" src="https://github.com/user-attachments/assets/3bdab71d-4a48-4bd9-ba29-b40dc020c105" />
+Login Page:existing users can login with email id,password
+
+<img width="1593" height="744" alt="image" src="https://github.com/user-attachments/assets/b3af7a6d-c9df-4ae1-8398-1245f02f8226" />
+Explore:connect with people by adding destination and preferences
+
+<img width="1593" height="744" alt="image" src="https://github.com/user-attachments/assets/8b27590b-dd54-4fdc-8de3-32e3588f0ba0" />
+Dashboard:page shows the upcoming trip of user and saved trips
+
+
 
 #### Diagrams
 
