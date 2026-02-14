@@ -62,8 +62,8 @@ async def login(user_email: str = Form(...), user_password: str = Form(...)):
 
 
 # 1. Setup templates and static files (CSS/Images)
-templates = Jinja2Templates(directory=".") # If files are in the same folder
-app.mount("/static", StaticFiles(directory="."), name="static") 
+templates = Jinja2Templates(directory="templates") # If files are in the same folder
+app.mount("/static", StaticFiles(directory="static"), name="static") 
 
 @app.get("/", response_class=responses.HTMLResponse)
 async def index(request: Request):
