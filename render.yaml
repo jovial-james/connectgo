@@ -1,0 +1,5 @@
+services:
+  - type: web
+    name: connectgo
+    env: docker
+    plan: free
