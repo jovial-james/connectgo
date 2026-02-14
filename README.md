@@ -13,7 +13,7 @@
 - Member 2: JOVIAL JAMES - Government Engineering College Thrissur
 
 ### Hosted Project Link
-[mention your project hosted link here]
+https://connectgo-3zwu.onrender.com/
 
 ### Project Description
 ConnectGo is a mobile app connecting travelers with shared interests to split accommodations and expenses seamlessly. Users match by destination, dates, and preferences, chat securely, and plan trips together for cost savings and safer adventures.
