@@ -10,9 +10,9 @@ import os
 
 def get_db_connection():
     return mysql.connector.connect(
-        host=os.getenv("10.70.246.154"),     
-        user=os.getenv("root"),      
-        password=os.getenv("mysql"), 
+        host=os.getenv("DB_HOST"),     
+        user=os.getenv("DB_USER"),      
+        password=os.getenv("DB_PASSWORD"), 
         database="ConnectGo",
         port=int(os.getenv("DB_PORT", 3306))
     )
