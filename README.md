@@ -16,7 +16,7 @@
 https://connectgo-3zwu.onrender.com/
 
 ### Project Description
-ConnectGo is a mobile app connecting travelers with shared interests to split accommodations and expenses seamlessly. Users match by destination, dates, and preferences, chat securely, and plan trips together for cost savings and safer adventures.
+ConnectGo is a web app connecting travelers with shared interests to split accommodations and expenses seamlessly. Users match by destination, dates, and preferences, chat securely, and plan trips together for cost savings and safer adventures.
 
 ### The Problem statement
 Travelers often face high accommodation and travel costs, lack of companionship, and safety concerns when exploring new destinations. Finding compatible travel partners with matching itineraries, budgets, and interests remains challenging without reliable platforms. This results in expensive solo trips, missed opportunities for shared experiences, and reduced travel frequency.
