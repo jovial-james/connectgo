@@ -109,8 +109,16 @@ Dashboard:page shows the upcoming trip of user and saved trips
 
 **System Architecture:**
 
-![Architecture Diagram](docs/architecture.png)
-*Explain your system architecture - components, data flow, tech stack interaction*
+users table<img width="1007" height="256" alt="image" src="https://github.com/user-attachments/assets/c0faea95-8643-4db4-9dc0-bf512aa84ea6" />
+
+trips<img width="1182" height="303" alt="image" src="https://github.com/user-attachments/assets/4d061ef2-df15-4c33-ac6c-e54184df20a9" />
+
+saved_trips<img width="951" height="201" alt="image" src="https://github.com/user-attachments/assets/47d50d39-ef74-400e-a769-24988a0b6a86" />
+
+messages<img width="998" height="242" alt="image" src="https://github.com/user-attachments/assets/67c9d566-492d-438d-9181-d4d0a5524b96" />
+
+
+
 
 **Application Workflow:**
 
