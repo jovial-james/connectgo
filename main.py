@@ -56,7 +56,7 @@ async def register(
     email: str = Form(...),
     password: str = Form(...)
 ):
-    conn = get_db()
+    conn = get_db_connection()
     cursor = conn.cursor()
 
     hashed = bcrypt.hashpw(password.encode(), bcrypt.gensalt()).decode()
@@ -83,7 +83,7 @@ async def login(
     user_email: str = Form(...),
     user_password: str = Form(...)
 ):
-    conn = get_db()
+    conn = get_db_connection()
     cursor = conn.cursor(dictionary=True)
 
     cursor.execute(
