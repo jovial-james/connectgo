@@ -6,12 +6,15 @@ from fastapi.staticfiles import StaticFiles
 
 app = FastAPI()
 
-def get_db():
+import os
+
+def get_db_connection():
     return mysql.connector.connect(
-        host="localhost",
-        user="root",
-        password="mysql",
-        database="ConnectGo"
+        host=os.getenv("10.70.246.154"),     
+        user=os.getenv("root"),      
+        password=os.getenv("mysql"), 
+        database="ConnectGo",
+        port=int(os.getenv("DB_PORT", 3306))
     )
 
 templates = Jinja2Templates(directory="templates")

@@ -1,6 +1,8 @@
 import mysql.connector
+import os
+
 try:
-    conn=mysql.connector.connect(host='localhost',user="root",password="mysql")
+    conn=mysql.connector.connect(host=os.getenv("10.70.246.154"), user=os.getenv("root"), password=os.getenv("mysql"))
     cursor = conn.cursor()
     cursor.execute("create database if not exists ConnectGo")
     cursor.execute("use ConnectGo")
