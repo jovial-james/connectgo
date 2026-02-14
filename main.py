@@ -6,7 +6,6 @@ from fastapi.staticfiles import StaticFiles
 
 app = FastAPI()
 
-# Database function (NEW - avoids closed connection issue)
 def get_db():
     return mysql.connector.connect(
         host="localhost",
@@ -15,12 +14,8 @@ def get_db():
         database="ConnectGo"
     )
 
-# Templates + Static
 templates = Jinja2Templates(directory="templates")
 app.mount("/static", StaticFiles(directory="static"), name="static")
-
-
-# ---------------- ROUTES ---------------- #
 
 @app.get("/", response_class=responses.HTMLResponse)
 async def index(request: Request):
@@ -41,8 +36,6 @@ async def signup_page(request: Request):
 async def dashboard(request: Request):
     return templates.TemplateResponse("dashboard.html", {"request": request})
 
-
-# ---------------- AUTH ---------------- #
 
 @app.post("/register")
 async def register(
